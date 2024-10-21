@@ -1,5 +1,4 @@
 package Task2;
-
 import java.util.*;
 
 class Product {
@@ -51,7 +50,8 @@ class Product {
 class T1 {
     public static void calcTotalValue(List<Product> products) {
         double totalValue = 0;
-        for (Product ele : products) {
+        for (int i = 0; i < products.size(); i++) {
+            Product ele = products.get(i);
             if (ele.isInStock()) totalValue += ele.getPrice();
         }
         System.out.println("Total value of Stock is $" + totalValue);
@@ -74,8 +74,12 @@ class T1 {
 
     public static void aboveThresholdPrice(List<Product> products, double thresholdPrice) {
         int cnt = 0;
-        for (Product ele : products) {
+        int i = 0;
+        while (i < products.size()) {
+            Product ele = products.get(i);
             if (ele.getPrice() > thresholdPrice) cnt++;
+
+            i++;
         }
         System.out.println("The number of products above threshold $" + thresholdPrice + " is " + cnt);
     }
