@@ -2,10 +2,10 @@ package Task2;
 import java.util.*;
 
 class Product {
-    int id;
-    String name;
-    double price;
-    boolean inStock;
+    private int id;
+    private String name;
+    private double price;
+    private boolean inStock;
 
     public Product(int id, String name, double price, boolean inStock) {
         this.id = id;
@@ -78,7 +78,6 @@ class T1 {
         while (i < products.size()) {
             Product ele = products.get(i);
             if (ele.getPrice() > thresholdPrice) cnt++;
-
             i++;
         }
         System.out.println("The number of products above threshold $" + thresholdPrice + " is " + cnt);
