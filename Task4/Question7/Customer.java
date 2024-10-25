@@ -10,11 +10,15 @@ public class Customer {
     private String address;
     private List<Product> products;
 
+    {
+        products = new ArrayList<>();
+    }
+
     Customer(String name, double contactNumber, String address) {
         this.name = name;
         this.contactNumber = contactNumber;
         this.address = address;
-        this.products = new ArrayList<>();
+//        this.products = new ArrayList<>();
     }
 
     public void addProduct(Product product) {
@@ -43,6 +47,7 @@ public class Customer {
     }
 
     public List<Product> getProducts() {
+        System.out.println(products);
         return products;
     }
 

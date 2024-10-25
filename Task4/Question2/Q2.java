@@ -4,7 +4,7 @@ package Task4.Question2;
 
 public class Q2 {
     public static void main(String[] args) {
-        ChildClass obj = new ChildClass();
+        ParentClass obj = new ChildClass();
 
         obj.display();
 
