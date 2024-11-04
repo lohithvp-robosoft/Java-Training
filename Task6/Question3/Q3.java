@@ -78,7 +78,15 @@ public class Q3 {
         System.out.println(avgGrade);
 
         System.out.println(groupGrades(avgGrade));
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        // Using reduce() to sum the elements
+        int sum = numbers.stream()
+                .reduce(0, (a, b) -> a + b);
 
     }
 }
+
+
+
 
