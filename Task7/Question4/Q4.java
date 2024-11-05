@@ -12,10 +12,10 @@ public class Q4 {
         p1.setTokenById(1,false);
         System.out.println(p1.getToken());
         System.out.println(p1.reset());
-//        System.out.println(p1.getToken());
+        System.out.println(p1.getToken());
 
-//        p1.setTokenById(1,false);
-//        System.out.println(p1.getToken());
-//       // System.out.println(p1.getToken());
+        p1.setTokenById(1,false);
+        System.out.println(p1.getToken());
+       // System.out.println(p1.getToken());
     }
 }

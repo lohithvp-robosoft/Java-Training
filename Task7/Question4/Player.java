@@ -1,7 +1,6 @@
 package Task7.Question4;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Player {
@@ -16,7 +15,8 @@ public class Player {
     }
 
     public List<Token> reset() {
-        Collections.fill(tokens, new Token());
+//        Collections.fill(tokens, new Token());
+        tokens.stream().forEach(token -> token.setActive(true));
         return this.tokens;
 
     }
