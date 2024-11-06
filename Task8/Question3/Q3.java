@@ -21,8 +21,7 @@ public class Q3 {
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
-        }
-        finally {
+        } finally {
             if (sc != null) {
                 sc.close();
                 System.out.println("Scanner closed.");
@@ -31,7 +30,7 @@ public class Q3 {
     }
 
     public static void main(String[] args) {
-        readFile("samkfkfple.txt");
+        readFile("sample.txt");
     }
 }
 
