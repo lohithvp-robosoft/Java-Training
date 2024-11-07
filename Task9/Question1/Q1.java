@@ -21,6 +21,8 @@ public class Q1 {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(file));
                 writer.write("Hello, This is the testing file\n");
                 writer.write("Thank you\n");
+                System.out.println(fileName + " is successfully created");
+
                 writer.close();
             } else {
                 System.out.println("File already exist");
@@ -76,6 +78,7 @@ public class Q1 {
                 String[] words = line.split("\\s+");
                 cnt += words.length;
             }
+            reader.close();
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -106,6 +109,8 @@ public class Q1 {
                 backupWriter.write(line);
                 backupWriter.newLine();
             }
+            fileReader.close();
+            wordCountReader.close();
             backupWriter.close();
             System.out.println("Successfully created backup file");
         } catch (IOException e) {
@@ -118,19 +123,19 @@ public class Q1 {
         String wordCountPath = path + "wordcount.txt";
         File fileToDelete = new File(filePath);
         File wordCountFile = new File(wordCountPath);
-        fileToDelete.delete();
-        wordCountFile.delete();
-
+        if (fileToDelete.delete() && wordCountFile.delete()) {
+            System.out.println(newFile + " and " + "wordcount.txt were successfully deleted");
+        }
     }
 
 
     public static void main(String[] args) {
-        String initailFileName = "javafileOperation.txt";
-        fileWriteOp(initailFileName);
-        String newFileName = fileRename(initailFileName);
+        String initialFileName = "javafileOperation.txt";
+        fileWriteOp(initialFileName);
+        String newFileName = fileRename(initialFileName);
         countWordsFromFile(newFileName);
         createBackup(newFileName);
-        deleteBothFile("testing.txt");
+        deleteBothFile(newFileName);
     }
 }
 
