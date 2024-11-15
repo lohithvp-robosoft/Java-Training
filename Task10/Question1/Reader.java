@@ -4,9 +4,9 @@ import java.time.LocalTime;
 
 public class Reader implements Runnable {
     private int id;
-    private ReadWriteLock readWriteLock;
+    private ReadWriteLockClass readWriteLock;
 
-    Reader(ReadWriteLock readWriteLock, int id) {
+    Reader(ReadWriteLockClass readWriteLock, int id) {
         this.id = id;
         this.readWriteLock = readWriteLock;
     }

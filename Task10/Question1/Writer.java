@@ -4,9 +4,9 @@ import java.time.LocalTime;
 
 public class Writer implements Runnable {
     private int id;
-    private ReadWriteLock readWriteLock;
+    private ReadWriteLockClass readWriteLock;
 
-    Writer(ReadWriteLock readWriteLock, int id) {
+    Writer(ReadWriteLockClass readWriteLock, int id) {
         this.id = id;
         this.readWriteLock = readWriteLock;
     }
@@ -18,9 +18,9 @@ public class Writer implements Runnable {
             System.out.println("The Writer " + id + " is writing 🔴" + LocalTime.now());
             Thread.sleep(3000);
             System.out.println("The Writer " + id + " has completed writing 🟢" + LocalTime.now());
-            readWriteLock.setWriteUnlock();
+            readWriteLock.setWriteUnLock();
         } catch (InterruptedException e) {
-            System.out.println("Encounterd an error" + e.getMessage());
+            System.out.println("Encountered an error" + e.getMessage());
         }
     }
 }
